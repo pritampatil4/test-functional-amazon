@@ -1,0 +1,30 @@
+{
+  "name": "test-functional-amazon",
+  "version": "1.0.0",
+  "description": "tests for verifying add to cart functionality of amazon.in",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress-tests":"cypress run --browser chrome --headed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pritampatil4/test-functional-amazon.git"
+  },
+  "keywords": [
+    "cypress",
+    "test",
+    "automation",
+    "amazon",
+    "automation"
+  ],
+  "author": "Pritam Patil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pritampatil4/test-functional-amazon/issues"
+  },
+  "homepage": "https://github.com/pritampatil4/test-functional-amazon#readme",
+  "dependencies": {
+    "cypress": "^9.5.1"
+  }
+}
