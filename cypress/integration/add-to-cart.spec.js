@@ -3,14 +3,22 @@ const {
   isLogoVisible,
   clickOnCart,
 } = require("../page-objects/home-page");
+
 const {
   isBasketEmptyMessageVisible,
   enterProductNameAndSearch,
 } = require("../page-objects/cart-page");
+
 const {
   isResultsTextVisible,
-  isItemNo3Visible,
+  clickOnItemNo3,
 } = require("../page-objects/search-results-page");
+
+const {
+  clickOnAddToCartBtn,
+  clickOnSkipWarrantyCoverageBtn,
+  clickOnConfirmCartBtn,
+} = require("../page-objects/product-details-page");
 
 describe("Add to Cart Functionality", () => {
   it("Opens the home page", () => {
@@ -29,7 +37,12 @@ describe("Add to Cart Functionality", () => {
 
   it("Verify search results and select item", () => {
     isResultsTextVisible();
-    cy.get('[data-component-id="37"]').click();
-    //TODO: Click on 3rd item
+    clickOnItemNo3();
+  });
+
+  it("Verify adding item to cart", () => {
+    clickOnAddToCartBtn();
+    clickOnSkipWarrantyCoverageBtn();
+    clickOnConfirmCartBtn();
   });
 });
