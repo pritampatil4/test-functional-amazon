@@ -1,6 +1,7 @@
 const btnAddToCart = "#add-to-cart-button";
 const btnSkipWarrantyCoverage = "#attachSiNoCoverage";
-const BtnConfirmAddToCart = '[aria-labelledby="a-autoid-0-announce"]';
+const btnConfirmAddToCart = '[aria-labelledby="a-autoid-0-announce"]';
+const textItemInCart = '#nav-cart-count';
 
 const clickOnAddToCartBtn = () => {
   cy.get(btnAddToCart).click();
@@ -11,11 +12,17 @@ const clickOnSkipWarrantyCoverageBtn = () => {
 };
 
 const clickOnConfirmCartBtn = () => {
-  cy.get(BtnConfirmAddToCart).click();
+  cy.get(btnConfirmAddToCart).click();
 };
+
+const expectItemsInTheCart = (itemsCount) => {
+    cy.get(textItemInCart).should('have.text', itemsCount)
+}
+
 
 module.exports = {
   clickOnAddToCartBtn,
   clickOnSkipWarrantyCoverageBtn,
   clickOnConfirmCartBtn,
+  expectItemsInTheCart,
 };

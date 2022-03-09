@@ -7,6 +7,7 @@ const {
 const {
   isBasketEmptyMessageVisible,
   enterProductNameAndSearch,
+  clickOnItemDeleteBtn,
 } = require("../page-objects/cart-page");
 
 const {
@@ -18,6 +19,7 @@ const {
   clickOnAddToCartBtn,
   clickOnSkipWarrantyCoverageBtn,
   clickOnConfirmCartBtn,
+  expectItemsInTheCart,
 } = require("../page-objects/product-details-page");
 
 describe("Add to Cart Functionality", () => {
@@ -44,5 +46,11 @@ describe("Add to Cart Functionality", () => {
     clickOnAddToCartBtn();
     clickOnSkipWarrantyCoverageBtn();
     clickOnConfirmCartBtn();
+    expectItemsInTheCart("1");
+  });
+
+  it("Remove item and verify cart count", () => {
+    clickOnItemDeleteBtn();
+    expectItemsInTheCart("0");
   });
 });
